@@ -1,0 +1,140 @@
+/* Remove as margens e preenchimentos padrão de todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Centraliza o cartão na tela e define a cor de fundo geral */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3e9e2;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Estrutura principal do cartão do produto (Divide em colunas com Flexbox) */
+.produto {
+    display: flex;
+    width: 368px;
+    min-height: 276px;
+    background-color: #ffffff;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+/* Área da imagem (ocupa 50% da largura do cartão) */
+.produto-imagem-box {
+    width: 50%;
+    flex-shrink: 0;
+}
+
+.produto-imagem-box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Área das informações de texto (ocupa os outros 50%) */
+.produto-info {
+    width: 50%;
+    padding: 20px 19px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Estilização da Categoria do produto */
+.categoria {
+    font-size: 7px;
+    letter-spacing: 3px;
+    color: #888888;
+    margin-bottom: 12px;
+}
+
+/* Estilização do Título (Nome do Perfume) */
+.produto-info h1 {
+    font-family: Georgia, serif;
+    font-size: 19px;
+    line-height: 1.03;
+    color: #202020;
+    margin-bottom: 15px;
+}
+
+/* Estilização da Descrição */
+.descricao {
+    font-size: 9px;
+    line-height: 1.55;
+    color: #777777;
+    margin-bottom: 14px;
+}
+
+/* Bloco que agrupa os preços */
+.precos {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* Preço atual com destaque em verde escuro */
+.preco-atual {
+    font-family: Georgia, serif;
+    font-size: 21px;
+    font-weight: bold;
+    color: #3d806b;
+}
+
+/* Preço antigo riscado */
+.preco-antigo {
+    font-size: 8px;
+    color: #777777;
+    text-decoration: line-through;
+}
+
+/* Botão de Adicionar ao Carrinho */
+.botao-carrinho {
+    width: 100%;
+    min-height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #40866f;
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Efeito interativo ao passar o mouse por cima do botão */
+.botao-carrinho:hover {
+    background-color: #2d6855;
+}
+
+/* Responsividade para telas menores (smartphones) */
+@media (max-width: 420px) {
+    .produto {
+        width: 100%;
+        max-width: 368px;
+    }
+
+    .produto-info {
+        padding: 16px 12px;
+    }
+
+    .produto-info h1 {
+        font-size: 17px;
+    }
+
+    .preco-atual {
+        font-size: 18px;
+    }
+}
